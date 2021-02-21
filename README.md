@@ -1,4 +1,4 @@
-# ContactBook-AutomatedTests
+# ContactBook: Automated Tests
 
 Automated tests for the ContactBook App:
  - API tests (based on NUnit and ReshSharp)
