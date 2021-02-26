@@ -29,6 +29,8 @@ namespace ContactBook_SeleniumTests
                 .Deserialize<List<ContactResponse>>(response);
             Assert.IsTrue(contacts.Count > 0);
             Assert.IsTrue(contacts[0].id > 0);
+            Assert.AreEqual(contacts[0].firstName, "Steve");
+            Assert.AreEqual(contacts[0].lastName, "Jobs");
         }
 
         [Test]

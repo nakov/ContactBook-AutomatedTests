@@ -18,12 +18,13 @@ namespace ContactBook_AndroidAppTests
         public void SetupLocalService()
         {
             // Start the Appium server as local Node.js app
-            appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
-            appiumLocalService.Start();
+            //appiumLocalService = new AppiumServiceBuilder().UsingAnyFreePort().Build();
+            //appiumLocalService.Start();
 
             var appiumOptions = new AppiumOptions() { PlatformName = "Android" };
             appiumOptions.AddAdditionalCapability("app", AppForTesting);
-            driver = new AndroidDriver<AndroidElement>(appiumLocalService, appiumOptions);
+            driver = new AndroidDriver<AndroidElement>(
+                new Uri("http://[::1]:4723/wd/hub"), appiumOptions);
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
         }
